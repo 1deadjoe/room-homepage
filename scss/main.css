@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  word-spacing: 8px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+p {
+  color: hsl(0, 0%, 63%);
+  font-weight: 500;
+  line-height: 1.35;
+  padding-block: 1rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 1rem 1rem 1rem 0;
+  cursor: pointer;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+.header-wrapper,
+.hero-slide article,
+section {
+  padding-inline: 2rem;
+}
+
+header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+}
+header .header-wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-wrapper .logo {
+  flex-grow: 1;
+  text-align: center;
+}
+header .header-wrapper nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+header .header-wrapper li a {
+  text-transform: lowercase;
+  font-weight: 600;
+  padding-bottom: 2px;
+  position: relative;
+  font-size: 1rem;
+}
+header .header-wrapper li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  width: 100%;
+  background-color: currentColor;
+  transform: translate(-50%, 0) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+header .header-wrapper li a:hover::after {
+  transform: translate(-50%, 0) scaleX(1);
+}
+header .header-wrapper .hidden {
+  display: none;
+}
+
+.menu-pop {
+  background-color: white;
+}
+.menu-pop nav ul li a {
+  color: black;
+}
+
+.menu-pop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.644);
+}
+
+main {
+  position: relative;
+}
+main .carousel-controls {
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: calc(45vh - 3.8125rem);
+  z-index: 1;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .carousel-controls button {
+  padding: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+main .carousel-controls button:hover,
+main .carousel-controls button:focus {
+  background-color: hsl(0, 0%, 27%);
+}
+main .hero-slide {
+  display: flex;
+  flex-direction: column;
+}
+main .hero-slide picture {
+  height: 45vh;
+}
+main .hero-slide picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+main .hero-slide article {
+  padding-block: 2rem;
+}
+main .hero-slide article a {
+  display: flex;
+  align-items: center;
+  padding-block: 0.75rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.5rem;
+  transition: color 0.3s ease-in-out;
+}
+main .hero-slide article a svg {
+  transition: transform 0.3s ease-in-out;
+}
+main .hero-slide article a:hover {
+  color: hsl(0, 0%, 63%);
+}
+main .hero-slide article a:hover svg {
+  transform: translateX(20%);
+}
+main .hero-slide article a:hover svg path {
+  fill: hsl(0, 0%, 63%);
+}
+main .hero-slide.hidden {
+  display: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer section {
+  padding-block: 2rem;
+}
+footer img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 471px) {
+  main .hero-slide picture {
+    height: 55vh;
+  }
+  main .carousel-controls {
+    top: calc(55vh - 3.8125rem);
+  }
+  .hero-slide article {
+    padding-inline: 5rem;
+  }
+}
+@media screen and (min-width: 950px) {
+  header {
+    z-index: 222;
+  }
+  header .header-wrapper {
+    width: 40%;
+    max-width: 40rem;
+    padding: 4rem;
+  }
+  header button#menu {
+    display: none;
+  }
+  header .header-wrapper .logo {
+    margin: 0 4rem 0 0;
+  }
+  header .header-wrapper .logo img {
+    width: 10rem;
+  }
+  header .header-wrapper nav {
+    display: block !important;
+  }
+  header .header-wrapper nav ul {
+    gap: 20%;
+  }
+  header .header-wrapper nav ul li a {
+    color: white;
+  }
+  h2 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  main {
+    width: 100%;
+    height: 65vh;
+    position: relative;
+  }
+  main .carousel-controls {
+    height: -moz-fit-content;
+    height: fit-content;
+    top: calc(65vh - 3.8125rem);
+    left: 60%;
+    z-index: 1;
+  }
+  main .hero-slide {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: row;
+  }
+  main .hero-slide picture {
+    position: static;
+    grid-column: 1/2;
+    height: 100%;
+    overflow: hidden;
+  }
+  main .hero-slide picture img {
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  main .hero-slide article {
+    position: relative;
+    padding: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer {
+    flex-direction: row;
+    height: 35vh;
+    width: 100%;
+  }
+  footer section {
+    padding-inline: 3rem;
+    max-width: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+} /*# sourceMappingURL=main.css.map */
